@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience - Job Application</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <h1>Job Application Form</h1>
     </header>
 
-    <nav aria-label="Application progress">
+    <nav class="progress-nav" aria-label="Application progress">
         <ol>
-            <li><a href="personal-information.html">Personal Information</a></li>
-            <li><a href="position.html">Position Details</a></li>
-            <li><strong>Experience</strong></li>
-            <li><a href="education-skills.html">Education & Skills</a></li>
+            <li class="step-completed"><a href="personal-information.html">Personal Information</a></li>
+            <li class="step-completed"><a href="position.html">Position Details</a></li>
+            <li class="step-active"><strong>Experience</strong></li>
+            <li><a href="education-skills.html">Education &amp; Skills</a></li>
         </ol>
     </nav>
 
-    <main>
-        <section>
+    <main class="main-content">
+        <section class="form-section">
             <h2>Work Experience</h2>
             <form method="POST" action="/submit-application">
                 <fieldset>
                     <legend>Current or Most Recent Position</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="currentJobTitle">Job Title <span aria-label="required">*</span></label>
                         <input
                             type="text"
@@ -34,10 +35,11 @@
                             name="currentJobTitle"
                             required
                             aria-required="true"
+                            placeholder="e.g. Senior Developer"
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="currentCompany">Company Name <span aria-label="required">*</span></label>
                         <input
                             type="text"
@@ -45,10 +47,11 @@
                             name="currentCompany"
                             required
                             aria-required="true"
+                            placeholder="Company name"
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="currentIndustry">Industry <span aria-label="required">*</span></label>
                         <input
                             type="text"
@@ -56,10 +59,11 @@
                             name="currentIndustry"
                             required
                             aria-required="true"
+                            placeholder="e.g. Technology"
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="currentStartDate">Start Date <span aria-label="required">*</span></label>
                         <input
                             type="date"
@@ -70,7 +74,7 @@
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="currentEndDate">End Date (leave blank if currently employed)</label>
                         <input
                             type="date"
@@ -79,7 +83,7 @@
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="currentResponsibilities">Key Responsibilities <span aria-label="required">*</span></label>
                         <textarea
                             id="currentResponsibilities"
@@ -87,6 +91,7 @@
                             rows="4"
                             required
                             aria-required="true"
+                            placeholder="Describe your key responsibilities..."
                         ></textarea>
                     </div>
                 </fieldset>
@@ -94,34 +99,37 @@
                 <fieldset>
                     <legend>Previous Position</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="prevJobTitle">Job Title</label>
                         <input
                             type="text"
                             id="prevJobTitle"
                             name="prevJobTitle"
+                            placeholder="Previous job title"
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="prevCompany">Company Name</label>
                         <input
                             type="text"
                             id="prevCompany"
                             name="prevCompany"
+                            placeholder="Previous company"
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="prevIndustry">Industry</label>
                         <input
                             type="text"
                             id="prevIndustry"
                             name="prevIndustry"
+                            placeholder="Industry"
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="prevStartDate">Start Date</label>
                         <input
                             type="date"
@@ -130,7 +138,7 @@
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="prevEndDate">End Date</label>
                         <input
                             type="date"
@@ -139,12 +147,13 @@
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="prevResponsibilities">Key Responsibilities</label>
                         <textarea
                             id="prevResponsibilities"
                             name="prevResponsibilities"
                             rows="4"
+                            placeholder="Describe your key responsibilities..."
                         ></textarea>
                     </div>
                 </fieldset>
@@ -152,7 +161,7 @@
                 <fieldset>
                     <legend>Experience Summary</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="totalExperience">Total Years of Experience <span aria-label="required">*</span></label>
                         <select id="totalExperience" name="totalExperience" required aria-required="true">
                             <option value="">-- Select --</option>
@@ -164,23 +173,25 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="achievements">Professional Achievements and Awards</label>
                         <textarea
                             id="achievements"
                             name="achievements"
                             rows="4"
                             aria-describedby="achievementsHint"
+                            placeholder="Highlight any recognitions or significant projects..."
                         ></textarea>
                         <small id="achievementsHint">Highlight any recognitions, promotions, or significant projects</small>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="reasonForChange">Reason for Leaving Your Current Role</label>
                         <textarea
                             id="reasonForChange"
                             name="reasonForChange"
                             rows="4"
+                            placeholder="Optional: briefly describe your reason..."
                         ></textarea>
                     </div>
                 </fieldset>
@@ -188,7 +199,7 @@
                 <fieldset>
                     <legend>Supporting Documents</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="resume">Resume/CV <span aria-label="required">*</span></label>
                         <input
                             type="file"
@@ -202,7 +213,7 @@
                         <small id="resumeHint">Accepted formats: PDF, DOC, DOCX (max 5 MB)</small>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="referenceLetter">Reference Letter (Optional)</label>
                         <input
                             type="file"
@@ -214,18 +225,19 @@
                         <small id="referenceLetterHint">Accepted formats: PDF, DOC, DOCX (max 5 MB)</small>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="workSamplesUrl">Work Samples/Portfolio URL (Optional)</label>
                         <input
                             type="url"
                             id="workSamplesUrl"
                             name="workSamplesUrl"
                             aria-describedby="workSamplesUrlHint"
+                            placeholder="https://your-portfolio.com"
                         />
                         <small id="workSamplesUrlHint">Link to your portfolio, GitHub, Behance, etc.</small>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="workSamplesFile">Work Samples File Upload (Optional)</label>
                         <input
                             type="file"
@@ -238,15 +250,15 @@
                     </div>
                 </fieldset>
 
-                <div>
-                    <button type="button" onclick="window.location.href='position.html'">Back</button>
-                    <button type="submit" formaction="education-skills.html">Next: Education & Skills</button>
+                <div class="btn-group">
+                    <button type="button" onclick="window.location.href='position.html'" class="btn btn-secondary">Back</button>
+                    <button type="submit" formaction="education-skills.html" class="btn btn-primary">Next: Education &amp; Skills</button>
                 </div>
             </form>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Jan Dexter Diaz. Job Application Portal. All rights reserved.</p>
     </footer>
 </body>

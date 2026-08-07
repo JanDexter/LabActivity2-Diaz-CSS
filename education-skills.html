@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education & Skills - Job Application</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <h1>Job Application Form</h1>
     </header>
 
-    <nav aria-label="Application progress">
+    <nav class="progress-nav" aria-label="Application progress">
         <ol>
-            <li><a href="personal-information.html">Personal Information</a></li>
-            <li><a href="position.html">Position Details</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><strong>Education & Skills</strong></li>
+            <li class="step-completed"><a href="personal-information.html">Personal Information</a></li>
+            <li class="step-completed"><a href="position.html">Position Details</a></li>
+            <li class="step-completed"><a href="experience.html">Experience</a></li>
+            <li class="step-active"><strong>Education &amp; Skills</strong></li>
         </ol>
     </nav>
 
-    <main>
-        <section>
-            <h2>Education & Skills</h2>
+    <main class="main-content">
+        <section class="form-section">
+            <h2>Education &amp; Skills</h2>
             <form method="POST" action="/submit-application">
                 <fieldset>
                     <legend>Highest Level of Education</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="educationLevel">Education Level <span aria-label="required">*</span></label>
                         <select id="educationLevel" name="educationLevel" required aria-required="true">
                             <option value="">-- Select --</option>
@@ -39,7 +40,7 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="institution">Educational Institution <span aria-label="required">*</span></label>
                         <input
                             type="text"
@@ -47,10 +48,11 @@
                             name="institution"
                             required
                             aria-required="true"
+                            placeholder="University or institution name"
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="fieldOfStudy">Field of Study <span aria-label="required">*</span></label>
                         <input
                             type="text"
@@ -58,10 +60,11 @@
                             name="fieldOfStudy"
                             required
                             aria-required="true"
+                            placeholder="e.g. Computer Science"
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="graduationDate">Graduation Date <span aria-label="required">*</span></label>
                         <input
                             type="date"
@@ -72,7 +75,7 @@
                         />
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="gpa">GPA (if applicable)</label>
                         <input
                             type="number"
@@ -82,6 +85,7 @@
                             max="4"
                             step="0.01"
                             aria-describedby="gpaHint"
+                            placeholder="e.g. 3.50"
                         />
                         <small id="gpaHint">Scale: 0.00 - 4.00</small>
                     </div>
@@ -90,18 +94,19 @@
                 <fieldset>
                     <legend>Professional Certifications</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="certifications">List Any Relevant Certifications</label>
                         <textarea
                             id="certifications"
                             name="certifications"
                             rows="4"
                             aria-describedby="certificationsHint"
+                            placeholder="e.g. CPA, PMP, Six Sigma..."
                         ></textarea>
                         <small id="certificationsHint">Example: CPA, PMP, Six Sigma, SHRM-CP, Real Estate License, etc.</small>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="certDocs">Certification Documents</label>
                         <input
                             type="file"
@@ -117,7 +122,7 @@
                 <fieldset>
                     <legend>Professional Skills</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="primarySkills">Primary Skills <span aria-label="required">*</span></label>
                         <textarea
                             id="primarySkills"
@@ -126,61 +131,62 @@
                             required
                             aria-required="true"
                             aria-describedby="primarySkillsHint"
+                            placeholder="List the main skills relevant to the position..."
                         ></textarea>
                         <small id="primarySkillsHint">List the main skills relevant to the position you are applying for</small>
                     </div>
 
                     <fieldset>
                         <legend>Skill Areas (select all that apply)</legend>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillAdmin" name="skillAreas" value="administration" />
                             <label for="skillAdmin">Administration &amp; Office Management</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillFinance" name="skillAreas" value="finance" />
                             <label for="skillFinance">Finance &amp; Accounting</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillMarketing" name="skillAreas" value="marketing" />
                             <label for="skillMarketing">Marketing &amp; Communications</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillSales" name="skillAreas" value="sales" />
                             <label for="skillSales">Sales &amp; Customer Service</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillIT" name="skillAreas" value="it" />
                             <label for="skillIT">Information Technology</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillEngineering" name="skillAreas" value="engineering" />
                             <label for="skillEngineering">Engineering &amp; Manufacturing</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillHealthcare" name="skillAreas" value="healthcare" />
                             <label for="skillHealthcare">Healthcare &amp; Medical</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillEducation" name="skillAreas" value="education" />
                             <label for="skillEducation">Education &amp; Training</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillLegal" name="skillAreas" value="legal" />
                             <label for="skillLegal">Legal &amp; Compliance</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillCreative" name="skillAreas" value="creative" />
                             <label for="skillCreative">Creative &amp; Design</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillManagement" name="skillAreas" value="management" />
                             <label for="skillManagement">Project Management</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillTrades" name="skillAreas" value="trades" />
                             <label for="skillTrades">Skilled Trades &amp; Labor</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="skillOther" name="skillAreas" value="other" />
                             <label for="skillOther">Other</label>
                         </div>
@@ -190,7 +196,7 @@
                 <fieldset>
                     <legend>Key Competencies</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="softSkills">Describe Your Key Strengths <span aria-label="required">*</span></label>
                         <textarea
                             id="softSkills"
@@ -199,49 +205,50 @@
                             required
                             aria-required="true"
                             aria-describedby="softSkillsHint"
+                            placeholder="Describe strengths relevant to any professional environment..."
                         ></textarea>
                         <small id="softSkillsHint">Describe strengths relevant to any professional environment</small>
                     </div>
 
                     <fieldset>
                         <legend>Select your top competencies</legend>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="teamwork" name="competencies" value="teamwork" />
                             <label for="teamwork">Teamwork &amp; Collaboration</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="leadership" name="competencies" value="leadership" />
                             <label for="leadership">Leadership</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="communication" name="competencies" value="communication" />
                             <label for="communication">Communication</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="problemsolving" name="competencies" value="problemsolving" />
                             <label for="problemsolving">Problem-Solving</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="timemanagement" name="competencies" value="timemanagement" />
                             <label for="timemanagement">Time Management</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="adaptability" name="competencies" value="adaptability" />
                             <label for="adaptability">Adaptability</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="creativity" name="competencies" value="creativity" />
                             <label for="creativity">Creativity &amp; Innovation</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="attention-detail" name="competencies" value="attention-detail" />
                             <label for="attention-detail">Attention to Detail</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="customerFocus" name="competencies" value="customer-focus" />
                             <label for="customerFocus">Customer Focus</label>
                         </div>
-                        <div>
+                        <div class="checkbox-group">
                             <input type="checkbox" id="criticalThinking" name="competencies" value="critical-thinking" />
                             <label for="criticalThinking">Critical Thinking</label>
                         </div>
@@ -251,7 +258,7 @@
                 <fieldset>
                     <legend>Languages Spoken</legend>
 
-                    <div>
+                    <div class="form-group">
                         <label for="language1">Language 1 <span aria-label="required">*</span></label>
                         <input
                             type="text"
@@ -259,9 +266,10 @@
                             name="language1"
                             required
                             aria-required="true"
+                            placeholder="e.g. English"
                         />
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="fluency1">Fluency Level <span aria-label="required">*</span></label>
                         <select id="fluency1" name="fluency1" required aria-required="true">
                             <option value="">-- Select --</option>
@@ -273,15 +281,16 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="language2">Language 2</label>
                         <input
                             type="text"
                             id="language2"
                             name="language2"
+                            placeholder="e.g. Filipino"
                         />
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="fluency2">Fluency Level</label>
                         <select id="fluency2" name="fluency2">
                             <option value="">-- Select --</option>
@@ -293,15 +302,16 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="language3">Language 3</label>
                         <input
                             type="text"
                             id="language3"
                             name="language3"
+                            placeholder="e.g. Japanese"
                         />
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="fluency3">Fluency Level</label>
                         <select id="fluency3" name="fluency3">
                             <option value="">-- Select --</option>
@@ -317,7 +327,7 @@
                 <fieldset>
                     <legend>Application Agreement</legend>
 
-                    <div>
+                    <div class="checkbox-group">
                         <input
                             type="checkbox"
                             id="agreeTerms"
@@ -330,7 +340,7 @@
                         </label>
                     </div>
 
-                    <div>
+                    <div class="checkbox-group">
                         <input
                             type="checkbox"
                             id="agreeBackground"
@@ -343,7 +353,7 @@
                         </label>
                     </div>
 
-                    <div>
+                    <div class="checkbox-group">
                         <input
                             type="checkbox"
                             id="agreeContact"
@@ -355,15 +365,15 @@
                     </div>
                 </fieldset>
 
-                <div>
-                    <button type="button" onclick="window.location.href='experience.html'">Back</button>
-                    <button type="submit">Submit Application</button>
+                <div class="btn-group">
+                    <button type="button" onclick="window.location.href='experience.html'" class="btn btn-secondary">Back</button>
+                    <button type="submit" class="btn btn-success">Submit Application</button>
                 </div>
             </form>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Jan Dexter Diaz. Job Application Portal. All rights reserved.</p>
     </footer>
 </body>
